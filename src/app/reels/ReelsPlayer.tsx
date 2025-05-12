@@ -10,7 +10,6 @@ export default function ReelsPlayer() {
         src="/videos/sample.mp4"
         className="w-full h-full object-cover rounded-lg"
         autoPlay
-        muted
         loop
       />
 

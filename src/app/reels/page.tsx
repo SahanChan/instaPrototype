@@ -88,7 +88,6 @@ export default function ReelsPage() {
             }}
             src={video.src}
             className="w-full h-full object-cover rounded-md cursor-pointer"
-            muted
             playsInline
             loop
             onClick={() => handleVideoClick(index)}

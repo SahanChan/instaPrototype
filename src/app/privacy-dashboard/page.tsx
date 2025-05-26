@@ -32,10 +32,6 @@ export default function PrivacyDashboardPage() {
       <section className="border rounded-md p-4 shadow-sm">
         <ExifScrubber />
       </section>
-
-      <section className="border rounded-md p-4 shadow-sm">
-        <PrivacyScore />
-      </section>
     </div>
   );
 }

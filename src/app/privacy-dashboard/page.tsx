@@ -1,5 +1,6 @@
 // app/privacy-dashboard/page.tsx
 
+import ExifRemover from "./ExifRemover";
 import ExifScrubber from "./ExifScrubber";
 import FakeFollowerFilter from "./FakeFollowerFilter";
 import FollowersPrivacy from "./FollowersPrivacy";
@@ -26,11 +27,7 @@ export default function PrivacyDashboardPage() {
       </section>
 
       <section className="border rounded-md p-4 shadow-sm">
-        <LocationFuzzingTool />
-      </section>
-
-      <section className="border rounded-md p-4 shadow-sm">
-        <ExifScrubber />
+        <ExifRemover />
       </section>
     </div>
   );

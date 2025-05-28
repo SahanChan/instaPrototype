@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import LockToggle from "./LockToggle";
+import ScreenshotWarning from "../components/screenshotPrevention/ScreenshotWarning";
 const mockPosts = [
   "/posts/1.jpg",
   "/posts/2.jpg",
@@ -16,31 +17,45 @@ interface LockToggleProps {
 }
 
 export default function ProfilePage() {
-  const [isLocked, setIsLocked] = useState<boolean>(true);
+  const [isLocked, setIsLocked] = useState<boolean>(false);
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-8">
+      <ScreenshotWarning />
       {/* Profile Header */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center space-x-6">
-          <img
-            src="/avatars/sahan.jpg"
-            alt="Profile"
-            className="w-20 h-20 rounded-full object-cover"
-          />
+          {isLocked ? (
+            <img
+              src="/avatars/avatar.png"
+              alt="Profile"
+              className="w-20 h-20 rounded-full object-cover"
+            />
+          ) : (
+            <img
+              src="/avatars/sahan.jpg"
+              alt="Profile"
+              className="w-20 h-20 rounded-full object-cover"
+            />
+          )}
+
           <div>
             <h2 className="text-xl font-semibold">sahan_c</h2>
-            <div className="flex space-x-4 text-sm text-gray-600 mt-2">
-              <span>
-                <strong>24</strong> posts
-              </span>
-              <span>
-                <strong>1.2k</strong> followers
-              </span>
-              <span>
-                <strong>530</strong> following
-              </span>
-            </div>
+            {isLocked ? (
+              <div></div>
+            ) : (
+              <div className="flex space-x-4 text-sm text-gray-600 mt-2">
+                <span>
+                  <strong>24</strong> posts
+                </span>
+                <span>
+                  <strong>1.2k</strong> followers
+                </span>
+                <span>
+                  <strong>530</strong> following
+                </span>
+              </div>
+            )}
           </div>
         </div>
 
